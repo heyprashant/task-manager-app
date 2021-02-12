@@ -18,14 +18,19 @@ app.listen(port, () => {
     console.log('Server is up on port ' + port)
 })
 
-const jwt = require('jsonwebtoken')
+const Task = require('./models/task')
+const User = require('./models/user')
 
-const myFunction = async () => {
-    const token = jwt.sign({_id: 'ab123'}, 'thisisnodecourse', {expiresIn: '1 days'})
-    console.log(token)
-
-    const data = jwt.verify(token, 'thisisnodecourse')
-    console.log(data)
+const main = async () => {
+    const user = await User.findById('60263e097f2d27618003ae3a')
+    await user.populate('tasks').execPopulate()
+    console.log(user.tasks)
 }
 
-myFunction()
+// const main = async () => {
+//     const task = await Task.findById('60263ffc415085329478756f')
+//     await task.populate('owner').execPopulate()
+//     console.log(task.owner)
+// }
+
+// main()
