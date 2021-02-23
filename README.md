@@ -1,4 +1,4 @@
-# Task Management REST API
+# Task Manager REST API
 This is a back-end code repository. 
 This is a full featured Task Management REST API back-end built with Node.js, Express and MongoDB.  
 <h3> Features include:</h3>
