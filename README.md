@@ -21,7 +21,7 @@ To use this code you will require an account with [SendGrid](https://signup.send
 
 Node.js version 12+ and npm must be installed on your machine.  In terminal type the following commands:
 ```
-git clone https://github.com/heyprashant/Task-Manager.git
+git clone https://github.com/heyprashant/task-manager-api.git
 cd Task-Manger
 npm install
 mkdir config
