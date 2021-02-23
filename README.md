@@ -46,5 +46,13 @@ npm run dev
 ```
 Alternatively you may name `config/prod.env` or `config/test.env` and appropriately run the web server with `npm run prod` or `npm run test`.
 <br>
+## Run unit tests using jest
+```
+npm run test
+```
+
 ## 
+
+
+
 For feedback or inquiries please contact me at prashant.p7804@gmail.com
