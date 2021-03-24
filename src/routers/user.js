@@ -3,7 +3,7 @@ const multer = require('multer')
 const sharp = require('sharp')
 const User = require('../models/user')
 const auth = require('../middleware/auth')
-const { sendWelcomeEmail, sendCancelationEmail } = require('../emails/account')
+const { sendWelcomeEmail, sendCancelationEmail, sendPasswordResetEMail } = require('../emails/account')
 const router = express.Router()
 
 router.post('/users', async (req, res) => {
@@ -26,7 +26,7 @@ router.post('/users/login', async (req, res) => {
         res.send({user, token})
 
     } catch (e) {
-        res.status(400).send()
+        res.status(400).send(e)
     }
 })
 
@@ -126,5 +126,17 @@ router.get('/users/:id/avatar', async (req, res) => {
         res.status(404).send()
     }
 })
+
+router.post('/users/passwordReset', async (req, res) => {
+    try {
+        const user = await User.findOne({email: req.body.email})
+        const token = await user.generateAuthToken()
+        sendPasswordResetEMail(user.email,user.name, token)
+        res.status(201).send({user})
+    } catch (e) {
+        res.status(400).send(e)
+    }
+})
+
 
 module.exports = router

@@ -7,7 +7,9 @@ const sendWelcomeEmail = (email, name) => {
         to: email,
         from: process.env.SGMAIL_EMAIL,
         subject: 'Thanks for joining in!',
-        text: `Welcome to the app, ${name}. Let me know how you get along with the app.`,
+        html: `
+        <p>Welcome to the Task Manager app, ${name}.</p> 
+        <p>Let me know how you get along with the app.</p>`,
     })
 }
 
@@ -20,7 +22,21 @@ const sendCancelationEmail = (email, name) => {
     })
 }
 
+const sendPasswordResetEMail = (email, name, token) => {
+    sgMail.send({
+        to: email,
+        from: process.env.SGMAIL_EMAIL,
+        subject: 'Password Reset Link.',
+        html: `
+            <p>Hi ${name}</p>
+            <p>Sorry to hear that you're having trouble with logging in to Task Manager. We can help you get straight back into your account.</p>
+            <p><a href='${process.env.CLIENT_URL}/user/password/reset/${token}'>Click here to reset password</a></p>`
+            
+    })
+}
+
 module.exports = {
     sendWelcomeEmail,
-    sendCancelationEmail
+    sendCancelationEmail,
+    sendPasswordResetEMail
 }
