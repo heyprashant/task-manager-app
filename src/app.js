@@ -17,7 +17,6 @@ app.use(taskRouter)
 
 
 app.get('*', (req, res) => {
-    console.log('route')
     res.sendFile(path.join(__dirname,'../client/build/index.html'));
 })
 
