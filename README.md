@@ -1,12 +1,18 @@
-# Task Manager REST API
-This is a back-end code repository. 
-This is a full featured Task Management REST API back-end built with Node.js, Express and MongoDB.  
-<h3> Features include:</h3>
-<li> Full CRUD features for User and Task instances.
-<li> Hash encryption of passwords and access management with JWT tokens.  
-<li> Restricted user access to CRUD operations based on JWT tokens.
-<li> Pagination and filtering of server responses to avoid slow page load times.
+# Task Manager REST API 
+<a href='https://heyprashant-task-app.herokuapp.com/'> Live demo</a>
 
+This is a MERN stack web application, It handles all CRUD operations on tasks and user account (create, view, update and delete) and user profile info (update and add user image). With all authentication and authorization handled at the backend using Node.js, like hash encryption of passwords and access management with JWT tokens.
+
+Other Features include:
+- Sending welcome mail and Delete account mail.
+- Password reset via mail.
+- Full CRUD features for User and Task instances.
+- Upload and Delete User Display picture.
+- Restricted user access to CRUD operations based on JWT tokens.
+- Pagination and filtering of server responses to avoid slow page load times.
+
+
+FrontEnd Submodule for app - <a href='https://github.com/heyprashant/Task-app-front-end'>Client</a>
 
 ### API USAGE
 All HTTP requests can be made from software such as [Postman](www.getpostman.com).  Postman is free and exists for all major operating systems.
