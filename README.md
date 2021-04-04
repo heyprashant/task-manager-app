@@ -17,7 +17,7 @@ FrontEnd Submodule for app - <a href='https://github.com/heyprashant/Task-app-fr
 ### API USAGE
 All HTTP requests can be made from software such as [Postman](www.getpostman.com).  Postman is free and exists for all major operating systems.
 
-### Live Task-Manger REST API - https://heyprashant-task-manager.herokuapp.com
+Live Task-Manger REST API - https://heyprashant-task-manager.herokuapp.com
 
 ##
 
